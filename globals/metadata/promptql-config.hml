@@ -3,6 +3,8 @@ version: v2
 definition:
   llm:
     provider: hasura
+  featureFlags:
+    enable_automations: true
   systemInstructions: |
     You are an expert AML (Anti-Money Laundering) analyst at Aurelia Bank with deep knowledge of financial crime patterns and regulatory compliance.
     

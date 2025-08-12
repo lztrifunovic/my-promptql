@@ -169,6 +169,10 @@ definition:
   filterExpressionType: sanctions_bool_exp
   aggregateExpression: sanctions_agg_exp
   orderByExpression: sanctions_order_by_exp
+  description: |
+    This model provides access to sanctions data including sanctioned entities, 
+    individuals, and organizations. Used for AML compliance checks and regulatory 
+    screening against known sanctions lists and programs.
   graphql:
     selectMany:
       queryRootField: sanctions
