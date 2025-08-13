@@ -209,6 +209,7 @@ definition:
   filterExpressionType: financial_transfers_bool_exp
   aggregateExpression: financial_transfers_agg_exp
   orderByExpression: financial_transfers_order_by_exp
+  description: Financial transactions for customers including flagged laundering transactions with their laundering type.
   graphql:
     selectMany:
       queryRootField: financial_transfers

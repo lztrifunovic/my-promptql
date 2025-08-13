@@ -59,10 +59,10 @@ definition:
       description: Name of the receiver.
     - name: originator_address
       type: String
-      description: ID of the the sender.
+      description: ID of the the sender as a string.
     - name: originator_id
       type: Int
-      description: ID of the sender.
+      description: ID of the sender as an int.
     - name: originator_name
       type: String
       description: Name of the sender.
@@ -71,7 +71,7 @@ definition:
       description: Date of the transaction as a string in UTC. An example is 2024-07-29T12:27:00.000Z
     - name: transaction_id
       type: Int
-      description: ID of the transaction.
+      description: ID of the transaction as int.
   graphql:
     typeName: aml_cases
     inputTypeName: aml_cases_input
@@ -296,6 +296,7 @@ definition:
   filterExpressionType: aml_cases_bool_exp
   aggregateExpression: aml_cases_agg_exp
   orderByExpression: aml_cases_order_by_exp
+  description: A table for anti-money laundering cases.
   graphql:
     selectMany:
       queryRootField: aml_cases

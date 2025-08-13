@@ -169,6 +169,7 @@ definition:
   filterExpressionType: customers_bool_exp
   aggregateExpression: customers_agg_exp
   orderByExpression: customers_order_by_exp
+  description: Customer table that includes PEP status, risk level, account id stored as account, and if they are blacklisted.
   graphql:
     selectMany:
       queryRootField: customers

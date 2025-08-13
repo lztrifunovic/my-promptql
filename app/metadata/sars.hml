@@ -3,10 +3,6 @@ kind: ObjectType
 version: v1
 definition:
   name: sars
-  description: |
-    Suspicious Activity Reports (SARs) filed by the bank to regulatory authorities.
-    Critical for AML compliance and investigation tracking. Contains detailed information
-    about suspicious transactions that require regulatory reporting under FCA guidelines.
   fields:
     - name: sar_id
       type: int_32!
@@ -167,6 +163,7 @@ definition:
   filterExpressionType: sars_bool_exp
   aggregateExpression: sars_agg_exp
   orderByExpression: sars_order_by_exp
+  description: Suspicious Activity Reports (SARs) filed by the bank to regulatory authorities as well as those that are pending and have yet to be filed.
   graphql:
     selectMany:
       queryRootField: sars

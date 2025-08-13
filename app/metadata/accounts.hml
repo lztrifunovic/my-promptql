@@ -74,7 +74,7 @@ definition:
       description: Account ID
     - name: contact_information
       type: accounts_contact_information
-      description: 
+      description: Contains address, email, and phone number all stored as strings.
     - name: entity_type
       type: String
       description: Entity type whether it is an individual or company.
@@ -307,6 +307,7 @@ definition:
   filterExpressionType: accounts_bool_exp
   aggregateExpression: accounts_agg_exp
   orderByExpression: accounts_order_by_exp
+  description: Table of accounts with entity type, risk levels, transactions limits, and account_id.
   graphql:
     selectMany:
       queryRootField: accounts
