@@ -220,3 +220,56 @@ definition:
   graphql:
     aggregateFieldName: sars_aggregate
 
+---
+kind: Relationship
+version: v1
+definition:
+  name: customer_account_to_accounts
+  sourceType: customers
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: account
+      target:
+        modelField:
+          - fieldName: account_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: customer_name_to_accounts
+  sourceType: customers
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: name
+      target:
+        modelField:
+          - fieldName: name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: customer_address_sanctions
+  sourceType: customers
+  target:
+    model:
+      name: sanctions
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: address
+      target:
+        modelField:
+          - fieldName: address

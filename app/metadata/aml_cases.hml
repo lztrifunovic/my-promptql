@@ -325,3 +325,92 @@ definition:
         filter: null
         allowSubscriptions: true
 
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_beneficiary_id
+  sourceType: aml_cases
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: beneficiary_id
+      target:
+        modelField:
+          - fieldName: account_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_originator_id
+  sourceType: aml_cases
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: originator_id
+      target:
+        modelField:
+          - fieldName: account_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_beneficiary_name
+  sourceType: aml_cases
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: beneficiary_name
+      target:
+        modelField:
+          - fieldName: name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_originator_name
+  sourceType: aml_cases
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: originator_name
+      target:
+        modelField:
+          - fieldName: name    
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_transaction_id
+  sourceType: aml_cases
+  target:
+    model:
+      name: financial_transfers
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: transaction_id
+      target:
+        modelField:
+          - fieldName: transaction_id

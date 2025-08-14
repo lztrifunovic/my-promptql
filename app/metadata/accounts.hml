@@ -336,3 +336,128 @@ definition:
         filter: null
         allowSubscriptions: true
 
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_id_beneficiary
+  sourceType: accounts
+  target:
+    model:
+      name: aml_cases
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: account_id
+      target:
+        modelField:
+          - fieldName: beneficiary_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_id_originator
+  sourceType: accounts
+  target:
+    model:
+      name: aml_cases
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: account_id
+      target:
+        modelField:
+          - fieldName: originator_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_name_beneficiary
+  sourceType: accounts
+  target:
+    model:
+      name: aml_cases
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: name
+      target:
+        modelField:
+          - fieldName: beneficiary_name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_name_originator_name
+  sourceType: accounts
+  target:
+    model:
+      name: aml_cases
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: name
+      target:
+        modelField:
+          - fieldName: originator_name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_id_customer_id
+  sourceType: accounts
+  target:
+    model:
+      name: customers
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: account_id
+      target:
+        modelField:
+          - fieldName: account
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_name_customer_name
+  sourceType: accounts
+  target:
+    model:
+      name: customers
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: name
+      target:
+        modelField:
+          - fieldName: name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: accounts_name_to_sanctions
+  sourceType: accounts
+  target:
+    model:
+      name: sanctions
+      relationshipType: Array
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: name
+      target:
+        modelField:
+          - fieldName: entity_name

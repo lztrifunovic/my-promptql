@@ -260,3 +260,56 @@ definition:
   graphql:
     aggregateFieldName: sars_aggregate
 
+---
+kind: Relationship
+version: v1
+definition:
+  name: receiver_account_details
+  sourceType: financial_transfers
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: receiver_account
+      target:
+        modelField:
+          - fieldName: account_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: sender_account_details
+  sourceType: financial_transfers
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: sender_account
+      target:
+        modelField:
+          - fieldName: account_id
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: aml_cases_tranaction
+  sourceType: financial_transfers
+  target:
+    model:
+      name: aml_cases
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: transaction_id
+      target:
+        modelField:
+          - fieldName: transaction_id

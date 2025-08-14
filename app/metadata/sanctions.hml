@@ -201,3 +201,38 @@ definition:
         filter: null
         allowSubscriptions: true
 
+---
+kind: Relationship
+version: v1
+definition:
+  name: sanctions_entity_name_to_accounts
+  sourceType: sanctions
+  target:
+    model:
+      name: accounts
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: entity_name
+      target:
+        modelField:
+          - fieldName: name
+
+---
+kind: Relationship
+version: v1
+definition:
+  name: sanctions_address_to_customers
+  sourceType: sanctions
+  target:
+    model:
+      name: customers
+      relationshipType: Object
+  mapping:
+    - source:
+        fieldPath:
+          - fieldName: address
+      target:
+        modelField:
+          - fieldName: address
